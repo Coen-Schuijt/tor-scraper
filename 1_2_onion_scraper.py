@@ -19,18 +19,19 @@ def parse_args():
     parser.add_argument('--url-seed-file','-u', default='./seed_lists/onion-seeds.lst', type=str, help='Relative path to file with urls to crawl and parse')
     parser.add_argument('--backoff','-b', default=0, type=str, help='Amount of files to parse before backing off')
     args = parser.parse_args()
-    raw_outdir = args.raw_outdir[0]
+    raw_outdir = args.raw_outdir
     if not raw_outdir.startswith('./'):
         raw_outdir = './' + raw_outdir
     if not raw_outdir.endswith('/'):
         raw_outdir += '/'
-    parsed_outdir = args.parsed_outdir[0]
+    parsed_outdir = args.parsed_outdir
     if not parsed_outdir.startswith('./'):
         parsed_outdir = './' + parsed_outdir
     if not parsed_outdir.endswith('/'):
         parsed_outdir += '/'
     if not os.path.exists(args.url_seed_file):
-        print('Seed file not found. Get a copy here:\n') 
+        print('Seed file not found. Get a copy here:\nhttps://gist.githubusercontent.com/Coen-Schuijt/15a73917ea884f21ae3482345ae48349/raw/onion-seeds.lst') 
+        sys.exit(1)
     return args.url_seed_file,args.backoff,raw_outdir,parsed_outdir
 
 def get_date():
