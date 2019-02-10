@@ -118,10 +118,6 @@ def main():
     print('[ INFO  ] : Using [{}] as seed file'.format(url_seed_file))
     date = get_date()
     url_list = get_urls(url_seed_file)
-    
-    print(raw_outdir)
-    print(parsed_outdir)
-    
     check_directories(raw_outdir,parsed_outdir)
     save_pages(raw_outdir,date,url_list)
     parse_addresses(raw_outdir,parsed_outdir,date,url_list)

@@ -19,12 +19,12 @@ def parse_args():
     parser.add_argument('--url-seed-file','-u', default='./seed_lists/onion-seeds.lst', type=str, help='Relative path to file with urls to crawl and parse')
     parser.add_argument('--backoff','-b', default=0, type=str, help='Amount of files to parse before backing off')
     args = parser.parse_args()
-    raw_outdir = args.raw_outdir[0]
+    raw_outdir = args.raw_outdir
     if not raw_outdir.startswith('./'):
         raw_outdir = './' + raw_outdir
     if not raw_outdir.endswith('/'):
         raw_outdir += '/'
-    parsed_outdir = args.parsed_outdir[0]
+    parsed_outdir = args.parsed_outdir
     if not parsed_outdir.startswith('./'):
         parsed_outdir = './' + parsed_outdir
     if not parsed_outdir.endswith('/'):
