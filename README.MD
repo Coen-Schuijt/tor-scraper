@@ -11,7 +11,7 @@ This repository contains some scripts that were used for scraping a part of the 
 ```bash
 pip3 install -r requirements.txt
 ```
-5. Creata virtual environment:
+5. Creat a virtual environment:
 ```bash
 virtualenv venv
 source venv/bin/activate
