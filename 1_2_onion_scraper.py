@@ -30,7 +30,8 @@ def parse_args():
     if not parsed_outdir.endswith('/'):
         parsed_outdir += '/'
     if not os.path.exists(args.url_seed_file):
-        print('Seed file not found. Get a copy here:\n') 
+        print('Seed file not found. Get a copy here:\nhttps://gist.githubusercontent.com/Coen-Schuijt/15a73917ea884f21ae3482345ae48349/raw/onion-seeds.lst') 
+        sys.exit(1)
     return args.url_seed_file,args.backoff,raw_outdir,parsed_outdir
 
 def get_date():

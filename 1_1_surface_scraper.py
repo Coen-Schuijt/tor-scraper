@@ -2,6 +2,7 @@
 
 import os
 import re
+import sys
 import datetime
 import urllib.request
 import argparse
@@ -28,6 +29,7 @@ def parse_args():
         parsed_outdir += '/'
     if not os.path.exists(args.url_seed_file):
         print('Seed file not found. Get a copy here:\nhttps://gist.githubusercontent.com/Coen-Schuijt/15a73917ea884f21ae3482345ae48349/raw/surface-seeds.lst') 
+        sys.exit(1)
     return args.url_seed_file,raw_outdir,parsed_outdir
 
 def get_date():
